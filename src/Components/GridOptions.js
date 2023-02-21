@@ -28,13 +28,15 @@ const Description = styled.p`
 font-weight: 500;
 font-size: small;
 `
-const GridOptions = ({selectOption}) => {
+const GridOptions = () => {
     const navigate = useNavigate()
     const handleOption = (option)=>{
+      localStorage.setItem('option', JSON.stringify(option));
       console.log(option)
-      selectOption(option)
       navigate("/AI-Tools")
     }
+    
+
   return (
     <Container>
       {array.map((element,id)=>(
